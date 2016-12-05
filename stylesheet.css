@@ -1,0 +1,241 @@
+
+@import url('http://getbootstrap.com/dist/css/bootstrap.css');
+p{
+
+  font-size : 1.5em;
+
+  }
+
+h1{
+
+  font-size : 2.5em;
+}
+.square {
+    width: 100%;
+    padding-bottom: 0%;
+}
+img {
+    width: 100%;
+}
+input {
+  width:100%;
+  height:100%;
+  padding-bottom: 5%
+}
+
+.container-table {
+    display: table;
+    height : 100%;
+}
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+ .bottomaligned {position:absolute; bottom:0;  margin-bottom:7px; left: 0;}
+
+
+
+html {
+  width: 100%;
+  height: 100%;
+
+}
+
+body{
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+
+
+
+    background-size: cover;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#map {
+        height: 80%;
+        width: 100%;
+        padding-bottom: 80%;
+        background-size: cover;
+      }
+      /* Optional: Makes the sample page fill the window. */
+
+#adress{
+  height:20%;
+  width:100%;
+  padding-bottom: 20%
+}
+
+
+
+@-webkit-keyframes rotation {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+@-moz-keyframes rotation {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+
+@-o-keyframes rotation {
+  from { -o-transform: rotate(0deg); }
+  to { -o-transform: rotate(360deg); }
+}
+
+@keyframes rotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.clock-case {
+  background-color: #62696F;
+  padding: 8%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.clock-dial {
+  background-color: #CECED0;
+  position: relative;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.clock-ratio {
+  padding-bottom: 100%;
+  height: 0;
+  overflow: hidden;
+}
+
+.clock-second-hand {
+  width: 2%;
+  height: 100%;
+  margin-left: -1%;
+  position: absolute;
+  left: 50%;
+  -webkit-animation: rotation 60s infinite linear;
+  -moz-animation: rotation 60s infinite linear;
+  -o-animation: rotation 60s infinite linear;
+  animation: rotation 60s infinite linear;
+}
+
+.clock-second-hand:before {
+  content: "";
+  background-color: red;
+  width: 100%;
+  height: 55%;
+  top: 4%;
+  position: absolute;
+}
+
+.clock-minute-hand {
+  width: 3%;
+  height: 100%;
+  margin-left: -1.5%;
+  position: absolute;
+  left: 50%;
+  -webkit-animation: rotation 3600s infinite linear;
+  -moz-animation: rotation 3600s infinite linear;
+  -o-animation: rotation 3600s infinite linear;
+  animation: rotation 3600s infinite linear;
+}
+
+.clock-minute-hand:before {
+  content: "";
+  background-color: #404040;
+  width: 100%;
+  height: 50%;
+  top: 8%;
+  position: absolute;
+}
+
+.clock-hour-hand {
+  width: 4%;
+  height: 100%;
+  margin-left: -2%;
+  position: absolute;
+  left: 50%;
+  -webkit-animation: rotation 43200s infinite linear;
+  -moz-animation: rotation 43200s infinite linear;
+  -o-animation: rotation 43200s infinite linear;
+  animation: rotation 43200s infinite linear;
+}
+
+.clock-hour-hand:before {
+  content: "";
+  background-color: #000000;
+  width: 100%;
+  height: 46%;
+  top: 12%;
+  position: absolute;
+}
+
+.clock-nut {
+  position: absolute;
+  top: 46%;
+  left: 46%;
+  width: 8%;
+  height: 8%;
+  background-color: #000000;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+
+.clock-stripe-upper{
+  position: absolute;
+  top: 3%;
+  left: 48%;
+  width: 4%;
+  height: 4%;
+  background-color: #000000;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+
+.clock-stripe-lower{
+  position: absolute;
+  top:93%;
+  left: 49%;
+  width: 4%;
+  height: 4%;
+  background-color: #000000;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.clock-stripe-left{
+  position: absolute;
+  top: 48%;
+  left: 7%;
+  width: 4%;
+  height: 4%;
+  background-color: #000000;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.clock-stripe-right{
+  position: absolute;
+  top: 47%;
+  left: 89%;
+  width: 4%;
+  height: 4%;
+  background-color: #000000;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}

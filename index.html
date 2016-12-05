@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
+
+		<title>TimezoneFinder</title>
+
+		<script type="text/javascript" src="clocks.js"></script>
+
+	</head>
+	<body>
+
+<!--api Key = AIzaSyCbFFPiUcSdAsFuEO4D5f8yUFJHm8D-8EU-->
+<div class="container-fluid">
+<div class="row">
+
+	<div class="col-sm-3 dropdown">
+
+		  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">How does it work?
+		  <span class="caret"></span></button>
+		  <ul class="dropdown-menu">
+		    <li>The website uses 2 API's: Google's Geocoder API and Google's Timzone API. The Geocoder returns a pair of coördinates based on the user input. This input can be a city,
+				land, continent, anything. These coördinates are then offered to the Timezone API. This returns a time offset with respect to the clients time. This means the current timezone of the client
+			must also be known. Luckuliy there is a JS funtion to find these. Equating the time offset with the clients time will yeild the local time at the requested location.</li>
+		  </ul>
+
+	</div>
+
+	<div class="col-sm-3">
+		<div class="dropdown" width="100%">
+			  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Why did I make this
+			  <span class="caret"></span></button>
+				  <ul class="dropdown-menu">
+			<li>I came up with this idea because my brother is currently residing in Australia. In his current location, we have a 7 hour time difference. Autralia is divided in no less than
+			5 timezones: +8, +9,5, +10 hours with respect to GMT, and 2 timezones that are +9,5/+10,5 and +10/+11 with respect to GMT, depending on the time of the year. This can be confusing, but using this
+		website it is easy to find the current time at any location in australia (and anywhere else on the world)</li>
+		</ul>
+			</div>
+		</div>
+	<div class="col-sm-3">
+		<div class="dropdown">
+			  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Room for improvement
+			  <span class="caret"></span></button>
+			  <ul class="dropdown-menu">
+			    <li>there are multiple things I can still improve on on the website:</li>
+			    <li>1. The geocode form has to be submittable by pressing "enter".</li>
+					<li>2. The background should change in a fading manner, instead of abruptly.</li>
+					<li>3. A digital clock should also be displayed.</li>
+					<li>4. the markers placed on the map should disappear after a new location is chosen.</li>
+
+					<li>These things are not very hard to implement. At some point however, I have to stop coding.</li>
+			  </ul>
+			</div>
+		</div>
+	<div class="col-sm-3">
+		<div class="dropdown">
+			  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">assumed rubrics
+			  <span class="caret"></span></button>
+			  <ul class="dropdown-menu">
+			    <li><a href="#">HTML</a></li>
+			    <li><a href="#">CSS</a></li>
+			    <li><a href="#">JavaScript</a></li>
+			  </ul>
+			</div>
+		</div>
+
+</div>
+
+</div>
+
+
+<div class="container-fluid container-table">
+      <div class="row vertical-center-row">
+				<div class="row">
+					<div class="col-sm-4">
+	      		<h1><mark>TimeZone finder</mark></h1>
+	      	
+
+						<p><mark>Welcome to my Timezone finder. To find the time in a specific place, enter the
+					name of this place in the form and press "geocode". The clock will start running at the
+					local time of that place.</mark></p>
+					</div>
+        	<div class="col-sm-4">
+          	<div class="square" id="clock"></div>
+        	</div>
+        	<div class="col-sm-4">
+        		<div id="map"></div>
+						<input id="address" type="textbox" value="Eindhoven">
+						<input id="submit" type="button" value="Geocode">
+        	</div>
+				</div>
+			</div>
+</div>
+
+
+
+
+
+
+			<script>
+	      function initMap() {
+					TimeSetter(5.46972249999998,51.44164199999999);
+	        var map = new google.maps.Map(document.getElementById('map'), {
+	          zoom: 8,
+	          center: {lat: 51.44164199999999, lng: 5.46972249999998}
+	        });
+	        var geocoder = new google.maps.Geocoder();
+
+	        document.getElementById('submit').addEventListener('click', function() {
+	          geocodeAddress(geocoder, map);
+	        });
+
+	    }
+
+	    </script>
+	    <script async defer
+	    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmTEBuLF3S3DchTodXclKO6AJ9w7GfsCQ&callback=initMap">
+	    </script>
+	</body>
+</html>
