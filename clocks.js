@@ -5,9 +5,9 @@ function TimeSetter(longtitude,latitude) {
   var TimeStamp = Math.round(currentDate.getTime() / 1000);
   var TimeInformation;
   var splitTimeInformation;
-console.log("https://maps.googleapis.com/maps/api/timezone/json?location="+latitude+","+longtitude+"&timestamp="+TimeStamp+"&key=AIzaSyCmTEBuLF3S3DchTodXclKO6AJ9w7GfsCQ")
+//console.log("https://maps.googleapis.com/maps/api/timezone/json?location="+latitude+","+longtitude+"&timestamp="+TimeStamp+"&key=AIzaSyCmTEBuLF3S3DchTodXclKO6AJ9w7GfsCQ")
   var jqxhr = $.getJSON("https://maps.googleapis.com/maps/api/timezone/json?location="+latitude+","+longtitude+"&timestamp="+TimeStamp+"&key=AIzaSyCmTEBuLF3S3DchTodXclKO6AJ9w7GfsCQ", function() {
-    console.log( jqxhr );
+    //console.log( JSON.parse(jqxhr.responseText) );
     TimeInformation = JSON.parse(jqxhr.responseText);
   //  console.log(TimeInformation);
     var LocalTime = TimeInformation.dstOffset + TimeInformation.rawOffset + TimeStamp + currentDate.getTimezoneOffset()*60;
@@ -18,12 +18,12 @@ console.log("https://maps.googleapis.com/maps/api/timezone/json?location="+latit
     var currentMinutes = currentTime.getMinutes()*60;
 
     var currentAnalogHours = ( currentTime.getHours() > 11 ) ? currentTime.getHours() - 12 : currentTime.getHours();
-    console.log(currentAnalogHours+ ":"  + currentTime.getMinutes()+ ":"+currentSeconds);
+    //console.log(currentAnalogHours+ ":"  + currentTime.getMinutes()+ ":"+currentSeconds);
     var currentHours = currentMinutes + ( currentAnalogHours * 3600 );
 
 ///reload the clock completely
 $("#clock").empty();
-$("#clock").append("<div class=\"clock-case\"><div class=\"clock-dial\"><div class=\"clock-hour-hand\"></div><div class=\"clock-minute-hand\"></div><div class=\"clock-second-hand\"></div><div class=\"clock-nut\"></div><div class=\"clock-ratio\"></div><div class=\"clock-stripe-upper\"></div><div class=\"clock-stripe-lower\"></div><div class=\"clock-stripe-left\"></div><div class=\"clock-stripe-right\"></div></div></div>");
+$("#clock").append("<div class=\"clock-case\"><div class=\"clock-dial\"><div class=\"clock-hour-hand\"></div><div class=\"clock-minute-hand\"></div><div class=\"clock-second-hand\"></div><div class=\"clock-nut\"></div><div class=\"clock-ratio\"></div><div class=\"clock-stripe-upper\"></div><div class=\"clock-stripe-lower\"></div><div class=\"clock-stripe-left\"></div><div class=\"clock-stripe-right\"></div></div></div><div width=\"100% \"align=\"center\"><p><mark>"+TimeInformation.timeZoneName+"</mark></p></div>");
 
 
 
@@ -54,7 +54,7 @@ function geocodeAddress(geocoder, resultsMap) {
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === 'OK') {
       resultsMap.setCenter(results[0].geometry.location);
-      console.log(results[0].geometry.location.lat()+ ":" +results[0].geometry.location.lng());
+      //console.log(results[0].geometry.location.lat()+ ":" +results[0].geometry.location.lng());
       var marker = new google.maps.Marker({
         map: resultsMap,
         position: results[0].geometry.location
